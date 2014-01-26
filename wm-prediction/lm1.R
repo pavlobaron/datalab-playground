@@ -93,8 +93,8 @@ splits <- split(tm, list(tm$team_a, tm$team_b))
 
 # create clean 2014 games data frame
 # Pairs are concatinated for auick lookup in the data frame with splits
-games2014 <- as.data.frame(c(paste(games2014_raw$team_a,
-                             paste(".", games2014_raw$team_b, sep=""), sep="")))
+colnames(games2014_raw) <- c("team_a", "team_b")
+games2014 <- paste(games2014_raw$team_a, paste(".", games2014_raw$team_b, sep=""), sep="")
 
 # --- not finished yet, just a test ---
 # test a linear model for a pair
