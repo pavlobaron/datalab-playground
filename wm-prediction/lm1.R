@@ -101,7 +101,7 @@ games2014 <- as.data.frame(c(paste(games2014_raw$team_a,
 # --- a hierarchical, step-wise regression is needed to calculate most likely
 # group outcomes and all the further stages up to the finals
 # Alternatively a bayesian network can be considered.
-df_bm <- as.data.frame(splits[games[3]])
+df_bm <- as.data.frame(splits[games2014[3]])
 colnames(df_bm) <- c("_1", "_2", "diff", "year_weight", "game_weight")
 l_bm <- lm(diff ~ game_weight + year_weight, data=df_bm)
 summary(l_bm)
